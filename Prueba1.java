@@ -79,4 +79,19 @@ class Lista {
       return sumatoria;
     }
   }
+
+  public float busqueda_binaria(int datoABuscar, Lista L) {
+    NodoLista temp = L.cabeza;
+    float counter = 0;
+    while (temp.siguiente != null) {
+      System.out.println("Dato: " + temp.dato);
+      if (temp.dato == datoABuscar) {
+        return counter - 1;
+      }
+      temp = temp.siguiente;
+      counter++;
+    }
+    System.out.println();
+    return -1;
+  }
 }
