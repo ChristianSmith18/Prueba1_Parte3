@@ -28,6 +28,12 @@ class Lista {
     L.insertar(30, 2);
     L.insertar(40, 3);
     L.mostrar();
+    float posicion = L.busqueda_binaria((40), L);
+    if (posicion == -1) {
+      System.out.println("El elemento no se encuentra en la lista!");
+    } else {
+      System.out.println("El elemento se encuentra en la posición: " + posicion);
+    }
   }
 
   public void insertar(int x, int p) {
@@ -64,27 +70,10 @@ class Lista {
     System.out.println();
   }
 
-  public float promedio() {
-    float sumatoria = 0;
-    int counter = 0;
-    NodoLista temp = cabeza;
-    while (temp.siguiente != null) {
-      sumatoria += (temp.siguiente.dato * 1.0);
-      counter++;
-      temp = temp.siguiente;
-    }
-    if (counter > 0) {
-      return (sumatoria / counter);
-    } else {
-      return sumatoria;
-    }
-  }
-
   public float busqueda_binaria(int datoABuscar, Lista L) {
     NodoLista temp = L.cabeza;
     float counter = 0;
-    while (temp.siguiente != null) {
-      System.out.println("Dato: " + temp.dato);
+    while (temp != null) {
       if (temp.dato == datoABuscar) {
         return counter - 1;
       }
