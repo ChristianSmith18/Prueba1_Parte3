@@ -22,7 +22,12 @@ class Lista {
   }
 
   public static void main(String[] args) {
-    
+    Lista L = new Lista();
+    L.insertar(10, 0);
+    L.insertar(20, 1);
+    L.insertar(30, 2);
+    L.insertar(40, 3);
+    L.mostrar();
   }
 
   public void insertar(int x, int p) {
